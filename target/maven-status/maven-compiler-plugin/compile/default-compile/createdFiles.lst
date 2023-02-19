@@ -1,0 +1,4 @@
+com/narrative/app/RestAppApplication.class
+com/narrative/app/beans/Request.class
+com/narrative/app/beans/Response.class
+com/narrative/app/controllers/DemoController.class
