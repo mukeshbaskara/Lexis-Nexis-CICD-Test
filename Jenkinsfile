@@ -1,10 +1,10 @@
 pipeline {
     agent any
     environment {
-        APP_NAME = 'lexis-nexis'
-        NAMESPACE = 'dev'
+        APP_NAME = 'rest-app'
+        NAMESPACE = 'lexis-nexis'
         IMAGE_TAG = 'latest'
-        AWS_DEFAULT_REGION = 'us-east-1'
+        AWS_DEFAULT_REGION = 'eu-west-2'
         AWS_ACCOUNT_ID = '626254781145'
         ECR_REPOSITORY = 'narrative'
         CANARY_WEIGHT = '25'
