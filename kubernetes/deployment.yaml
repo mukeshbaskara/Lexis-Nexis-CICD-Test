@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: lexis-nexis-deployment
+  namespace: lexis-nexis
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: rest-app
+      canary: "false"
+  template:
+    metadata:
+      labels:
+        app: rest-app
+        canary: "false"
+    spec:
+      containers:
+      - name: rest-services
+        image: <ECR_REPOSITORY>/<APP_NAME>:<IMAGE_TAG>
+        ports:
+        - containerPort: 8080
