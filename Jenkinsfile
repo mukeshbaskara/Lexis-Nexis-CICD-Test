@@ -12,9 +12,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                withMaven(maven: 'mvn') {
-                    sh 'mvn clean install'
-                }
+               sh 'mvn clean install'
             }
         }
         stage('Unit Test') {
