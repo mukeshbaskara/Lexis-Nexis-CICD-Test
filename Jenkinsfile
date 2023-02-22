@@ -12,6 +12,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
+               sh 'whereis mvn'
                sh 'export PATH=$PATH:/opt/apache-maven-3.9.0/bin/'
                sh 'echo $PATH'
                sh 'mvn clean install'
