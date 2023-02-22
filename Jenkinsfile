@@ -12,15 +12,12 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-               sh 'whereis mvn'
-               sh 'export PATH=$PATH:/opt/apache-maven-3.9.0/bin/'
-               sh 'echo $PATH'
-               sh '/opt/apache-maven-3.9.0/bin/mvn clean install'
+               sh '/usr/bin/mvn clean install'
             }
         }
         stage('Unit Test') {
             steps {
-                sh 'mvn test'
+                sh '/usr/bin/mvn test'
             }
             post {
                 always {
@@ -62,7 +59,7 @@ pipeline {
         }
         stage('Integration Test') {
             steps {
-                sh 'mvn verify -Pintegration-test'
+                sh '/usr/bin/mvn verify -Pintegration-test'
             }
         }
     }
