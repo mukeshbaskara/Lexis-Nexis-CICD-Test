@@ -3,7 +3,7 @@ pipeline {
     environment {
         APP_NAME = 'rest-app'
         NAMESPACE = 'lexis-nexis'
-        IMAGE_TAG = 'latest'
+        IMAGE_TAG = '${BUILD_NUMBER}'
         AWS_DEFAULT_REGION = 'eu-west-2'
         AWS_ACCOUNT_ID = '626254781145'
         ECR_REPOSITORY = 'narrative'
