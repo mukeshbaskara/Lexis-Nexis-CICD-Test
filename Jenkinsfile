@@ -35,6 +35,7 @@ pipeline {
         }
         stage('Build Image') {
             steps {
+                sh 'whoami'
                 script {
                     //withCredentials([string(credentialsId: 'aws-ecr-credentials', variable: 'DOCKER_CREDENTIALS')]) {
                     //    sh 'echo $DOCKER_CREDENTIALS | base64 -d | docker login -u AWS --password-stdin https://${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_DEFAULT_REGION}.amazonaws.com'
