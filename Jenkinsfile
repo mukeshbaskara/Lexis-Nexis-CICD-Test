@@ -55,6 +55,7 @@ pipeline {
         stage('Deploy Canary') {
             steps {
                 script {
+                    sh 'pwd'
                     sh "kubectl apply -f kubernetes/canary.yaml -n ${NAMESPACE} --record"
                     sh "kubectl set image deployment/${APP_NAME} ${APP_NAME}=${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_DEFAULT_REGION}.amazonaws.com/${ECR_REPOSITORY}:${IMAGE_TAG} --namespace ${NAMESPACE}"
                     sh "kubectl rollout status deployment/${APP_NAME}-canary --namespace ${NAMESPACE}"
