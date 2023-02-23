@@ -12,12 +12,12 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-               sh '/usr/bin/mvn clean install'
+               sh 'mvn clean install'
             }
         }
         stage('Unit Test') {
             steps {
-                sh '/usr/bin/mvn test'
+                sh 'mvn test'
             }
             post {
                 always {
